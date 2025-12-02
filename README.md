@@ -28,29 +28,43 @@
 ## DESARROLLO
 1. Abrir un navegador de internet e ingrear a la pagina de SonarCloud (https://www.sonarsource.com/products/sonarcloud/), iniciar sesión con su cuenta de Github.
 2. En el navegador de internet, en la pagina de SonarCloud, generar un nuevo token con el nombre que desee, luego de generar el token, guarde el resultado en algún archivo o aplicación de notas. Debido a que se utilizará mas adelante.
+
+
+![image](assets/2.JPG)
+
+
 3. En el navegador de internet, en la pagina de SonarCloud, hacer click en el icono + y luego en la opción *Analyze projects*. En la ventana de Analyze Projects, seleccionar la opción *create a project manually* para crear un proyecto de manera manual.
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/17b92d10-c2ca-4f7f-90d5-919c0b27ca6b)
+
+![image](assets/3.PNG)
 
 4. En el navegador de internet, en la pagina de SonarCloud, en la pagina de nuevo proyecto ingresar el nombre *BancaApp*, tomar nota del valor generado en el cuadro Project Key que sera utilizado mas adelante, confirmar la creación del proyecto haciendo click en el boton Next.
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/570d2cb9-a6d4-4629-a981-8408c308dc1e)
+
+![image](assets/4.PNG)
 
 5. En el navegador de internet, en la pagina de SonarCloud, en la pagina de *Set up your project or Clean as You Code*, seleccionar la opción *Previuos version*, confirmar la creación del proyecto haciendo click en el boton Create Project.
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/3d7c6776-e79e-4f68-bd40-5a1175c0b150)
+
+![image](assets/4B.PNG)
 
 5. En el navegador de internet, ingresar a la pagina Github del repositorio de su proyecto. En la sección Code, crear la rama *bddreporte*
-   ![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/abbdaa3b-1af8-4d6e-b693-4f83e443d20b)
+
+![image](assets/5.PNG)
+
 
 6. En el navegador de internet, en pagina Github del repositorio de su proyecto. En la sección Settings, ingresar a la opción Pages y en Branch seleccionar la rama recientemente creada, seguidamente hacer click en el botón *Save*.
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/e5c84d72-0b80-4f10-83b8-bed3619d1101)
+
+![image](assets/6.PNG)
 
 7. En el navegador de internet, en pagina Github del repositorio de su proyecto. En la sección Settings, en la opción Pages despues de unos minutos aparecerá la url publica del proyecto. Tomar nota de esa dirección que sera utilizada mas adelante.
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/23f7c00f-9709-4442-b84f-9323ecfe744f)
+
+![image](assets/page.PNG)
 
 8. En el navegador de internet, en pagina Github del repositorio de su proyecto. En la sección Settings, ingresar a la opción Secrets and variables y luego en la opción Actions, hacer click en el botón *New repository secret*.
+
 ![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/19bf5a41-1b5f-4664-86cc-c821fcc01551)
   
 9. En el navegador de internet, en pagina Github del repositorio de su proyecto. En la pagina de Actions secrets / New Secret, en el nombre ingresar el valor SONAR_TOKEN y en secreto ingresar el valor del token de SonarCloud generado en el paso 2.
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/3320bc5c-32c8-4f4c-bbcb-5852909d522c)
+
+![image](assets/7.PNG)
 
 10. Abrir Visual Studio Code, cargar la carpeta del repositorio del proyecto. Seguidamente crear la carpeta `.github` y dentro de esta la carpeta `workflows`. Seguidamente crear el archivo ci.yml con el siguiente contenido
 ```Yaml
@@ -123,16 +137,25 @@ jobs:
           publish_branch: bddreporte
           publish_dir: ./report/
 ```
+
+![image](assets/8.PNG)
+
 11. En el Visual Studio Code o en un terminal, subir o confirmar los cambios al repositorio.
+
+![image](assets/9.PNG)
+
 12. En el navegador de internet, en pagina Github del repositorio de su proyecto. En la sección Actions, se podra visualizar el siguiente resultado.
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/a1534320-2438-4161-84ca-36143c045c53)
+
+![image](assets/10.PNG)
 
 13. En el navegador de internet, en la pagina de SonarCloud, en el nuevo proyecto creado se podra visualizar el resultado de la ejecución
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/8ea2ac22-b40b-4067-9bf0-4b972a5eb313)
+
+![image](assets/11.PNG)
 
 14. En el navegador de internet, ingresar a la direcciòn generada en el paso 7, de Github Pages y se podrá visualizar el siguiente resultado:
 
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/a4f9ad6e-6aa1-424b-a496-9a16cad2ac2d)
+![image](assets/12.PNG)
 
-![image](https://github.com/UPT-FAING-EPIS/lab_ci_pruebas_01/assets/10199939/33266cc0-98e6-4585-a863-8cefd2748dab)
+
+![image](assets/13.PNG)
 
